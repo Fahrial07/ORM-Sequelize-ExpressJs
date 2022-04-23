@@ -1,0 +1,27 @@
+<%- include('layouts/header'); %>
+<h2>Tambah Data Teacher</h2>
+
+<div class="form">
+    <form action="/teachers/create" method="post">
+        <label for="first_name">First Name : </label><br>
+        <input type="text" name="first_name" id="first_name"><br>
+        <label for="last_name">Last Name : </label><br>
+        <input type="text" name="last_name" id="last_name"><br>
+        <label for="email">Email : </label><br>
+        <input type="text" name="email" id="email"><br>
+        <label for="gender">Gender : </label><br>
+        <select name="gender" id="gender">
+            <option disabled selected>- Select Your Gender -</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+        <label for="birth_date">Birth Date : </label><br>
+        <input type="date" name="birth_date" id="birth_date"><br>
+        <label for="subjects">Subjects : </label><br>
+        <input type="text" name="subjects"><br>
+        <br>
+        <button type="submit">Save Data</button> | <a href="/teachers">Show All Data</a>
+    </form>
+</div>
+
+<%- include('layouts/footer'); %>

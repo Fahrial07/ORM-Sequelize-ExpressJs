@@ -1,0 +1,42 @@
+<%- include('layouts/header');  %>
+<div class="main">
+    <h2>
+        <strong>Data Teacher</strong>
+    </h2>
+    <br>
+    <a href="/">Home</a> | <a href="/teachers/form">Add Data</a> <br>
+    <br>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th>Subjects</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% teachers.forEach(teacher => { %>
+            <tr>
+                <td><%= teacher.id %> </td>
+                <td><%= teacher.first_name %> </td>
+                <td><%= teacher.last_name %> </td>
+                <td><%= teacher.email %> </td>
+                <td><%= teacher.gender %> </td>
+                <td><%= teacher.birth_date %> </td>
+                <td><%= teacher.subjects %> </td>
+                <td>
+                    <a href="teachers/edit/<%= teacher.id %> ">Edit Data</a> | <a
+                        href="teachers/deleted/<%= teacher.id %> ">Hapus
+                        Data</a>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+<%- include('layouts/footer');  %>
